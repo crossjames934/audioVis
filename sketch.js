@@ -18,10 +18,10 @@ function draw() {
     let spectrum = fft.analyze();
     let waveform = fft.waveform();
     for (let i = 0; i < spectrum.length; i++) {
-        let hue = map(i, 0, spectrum.length, 0, 360);
+        let hue = map(i, 0, spectrum.length, 0, 300);
         let x = map(i, 0, spectrum.length, 0, width);
         let y = height - map(spectrum[i], 0, 255, 0, height);
-        let size = map(waveform[i], -1, 1, 3, 10);
+        let size = map(waveform[i], -1, 1, 3, 20);
         fill(hue, 100, 100);
         ellipse(x, y, size);
     }
